@@ -17,8 +17,8 @@
     "test:lint": "eslint .",
     "test:unit": "CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build",
+    "build:example": "cd example && yarn install && yarn run build",
+    "deploy": "yarn run build:example && gh-pages -d example/build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -26,11 +26,11 @@
     "react": "17.0.2"
   },
   "devDependencies": {
-    "@babel/core": "7.15.0",
-    "@storybook/addon-actions": "6.3.7",
-    "@storybook/addon-essentials": "6.3.7",
-    "@storybook/addon-links": "6.3.7",
-    "@storybook/react": "6.3.7",
+    "@babel/core": "7.15.5",
+    "@storybook/addon-actions": "6.3.9",
+    "@storybook/addon-essentials": "6.3.9",
+    "@storybook/addon-links": "6.3.9",
+    "@storybook/react": "6.3.9",
     "@svgr/cli": "5.5.0",
     "babel-eslint": "10.1.0",
     "babel-loader": "8.2.2",
@@ -55,6 +55,5 @@
   },
   "files": [
     "dist"
-  ],
-  "dependencies": {}
+  ]
 }
